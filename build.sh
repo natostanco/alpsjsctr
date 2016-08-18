@@ -8,14 +8,17 @@ curl -Ls "https://github.com/dustinblackman/phantomized/releases/download/$PH/do
 curl -Ls "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PH-linux-x86_64.tar.bz2" | tar xj -C /phantomjs
 mv /phantomjs/phantomjs-$PH-linux-x86_64/* /phantomjs
 rm -rf /phantomjs/phantomjs-$PH-linux-x86_64
+ln -s /phantomjs/bin/phantomjs /usr/local/bin/
 
 curl -Ls "https://github.com/casperjs/casperjs/archive/$CA.tar.gz" | tar xz -C /casperjs
 mv /casperjs/casperjs-$CA/* /casperjs
 rm -rf /casperjs/casperjs-$CA
+ln -s /casperjs/bin/casperjs /usr/local/bin/
 
 curl -Ls "https://github.com/laurentj/slimerjs/archive/$SL.tar.gz" | tar xz -C /slimerjs
 mv /slimerjs/slimerjs-$SL/src/* /slimerjs
 rm -rf /slimerjs/slimerjs-$SL
+ln -s /slimerjs/slimerjs /usr/local/bin/
 
 apk add firefox xvfb freetype fontconfig dbus bash
 apk del bzip2 git curl
