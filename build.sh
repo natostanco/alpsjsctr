@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 apk update
 apk add curl bzip2 git
@@ -17,7 +17,7 @@ curl -Ls "https://github.com/laurentj/slimerjs/archive/$SL.tar.gz" | tar xz -C /
 mv /slimerjs/slimerjs-$SL/src/* /slimerjs
 rm -rf /slimerjs/slimerjs-$SL
 
-apk add firefox xvfb freetype fontconfig dbus
+apk add firefox xvfb freetype fontconfig dbus bash
 apk del bzip2 git curl
 
 rm /var/cache/apk/*
